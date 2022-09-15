@@ -1,0 +1,51 @@
+:root {
+  --c-primary: #000000;
+  --c-blue: #1565c0;
+  --c-white: #fff;
+  --c-textGray: #919191;
+  --c-lightGray: #EDEDED;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section {
+  @apply w-full;
+}
+
+@layer base {
+    button {
+      @apply flex items-center;
+      @apply transition-all;
+      padding: 0 16px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+  
+      &:hover {
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+            0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    p {
+      color: var(--c-primary)
+    }
+
+    input, textarea {
+      @apply w-full;
+      border-bottom: 1px solid var(--c-primary);
+      padding: 5px 0;
+      margin-bottom: 30px;
+
+      
+      &:focus {
+        border: none;
+        outline: 0;
+        border-bottom: 1px solid var(--c-primary);
+      }
+    }
+  }
+  
