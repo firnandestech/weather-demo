@@ -1,0 +1,33 @@
+
+@mixin btnPrimary {
+  @apply w-full text-center;
+  background: var(--c-primary);
+  color: var(--c-white);
+  min-height: 41px;
+  display: inline-block;
+  
+  &:hover {
+    background: var(--c-blue);
+  }
+}
+
+@mixin btnSecondary {
+  @apply w-full text-center;
+  background: var(--c-white);
+  border-radius: 4px;
+  border: 1px solid #000000;
+  display: inline-block;
+
+  &:hover {
+    background: var(--c-white);
+  }
+}
+
+@mixin btnIttenary{
+  @apply w-full text-center;
+  background: var(--c-blue);
+  border-radius: 4px;
+  color: var(--c-white);
+  border: 1px solid var(--c-blue);
+  display: inline-block;
+}

@@ -1,0 +1,59 @@
+@import "../components/button.module.scss";
+
+.footer {
+  @apply flex flex-col items-center justify-center;
+  height: 540px;
+}
+
+.footerContainer {
+  @apply text-center;
+
+  & > p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--c-primary);
+  }
+}
+
+.documentationDesc {
+  @apply flex justify-center items-center;
+  @apply cursor-pointer;
+
+  & h4 {
+    margin-right: 11px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  & > a {
+    margin-top: 8px;
+    
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
+.socialMediaIconContainer {
+  @apply flex items-center justify-around;
+  margin: 28px 0 60px 0;
+
+  & > button {
+    @include btnSecondary;
+    @apply flex justify-center items-center;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border-radius: 100%;
+
+    &:hover {
+      background: var(--c-white);
+    }
+  }
+}

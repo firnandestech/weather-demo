@@ -1,0 +1,32 @@
+@import "../components/button.module.scss";
+
+.header {
+  @apply flex items-center;
+  height: 80px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.headerContainer {
+  @apply w-full container m-auto;
+  @apply flex justify-between items-center;
+}
+
+.btnWallet {
+  @include btnSecondary;
+  @apply flex justify-center items-center;
+  padding: 0;
+  height: 42px;
+  width: 57px;
+  border-radius: 3px;
+
+  &:hover {
+    background: var(--c-white);
+  }
+}
+
+.walletIcon {
+  content: "";
+  width: 24px;
+  height: 21px;
+
+}
