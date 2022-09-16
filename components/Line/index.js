@@ -11,17 +11,12 @@ import BottomAxis from './BottomAxis'
 import LeftAxis from './LeftAxis'
 import Field from './Field'
 
-interface IData {
-  label: string;
-  value: number;
-}
-
 const Line = () => {
-  const [data, setData] = useState<any>([])
+  const [data, setData] = useState([])
 
   const loadData = async () => {
     await csv('/data/temperature-in-san-francisco.csv').then((responseData) => {
-      const _data:any = responseData.map((d:any) => {
+      const _data = responseData.map((d) => {
         return {
           temperature: parseFloat(d.temperature),
           timestamp: new Date(d.timestamp),
@@ -32,21 +27,19 @@ const Line = () => {
     })
   }
 
-  const xValue:any = (d:any) => d.timestamp
-  const yValue:any = (d:any) => d.temperature
+  const xValue = (d) => d.timestamp
+  const yValue = (d) => d.temperature
 
-  const xScale = scaleTime()
-  // .domain(extent(data, xValue))
-  .range([0, innerWidth])
+  const xScale = scaleTime().domain(extent(data, xValue)).range([0, innerWidth])
 
   const yScale = scaleLinear()
-    // .domain(extent(data, yValue))
+    .domain(extent(data, yValue))
     .range([innerHeight, 0])
     .nice()
 
   const lineGenerator = line()
-    .x((d:any) => xScale(d.timestamp))
-    .y((d:any) => yScale(d.temperature))
+    .x((d) => xScale(d.timestamp))
+    .y((d) => yScale(d.temperature))
 
   useEffect(() => {
     loadData()
