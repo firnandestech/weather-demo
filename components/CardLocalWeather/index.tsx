@@ -15,7 +15,7 @@ type TFilterDataCenter = {
 };
 
 const CardLocalWeather = () => {
-  const today: object = new Date();
+  const today: Date = new Date();
   const [features, setFeatures] = useState<any[]>([]);
   const [dataCenterLocations, setDataCenterLocations] = useState([]);
   const [selectedDataCenter, setSelectedDataCenter] = useState(null);
@@ -67,7 +67,7 @@ const CardLocalWeather = () => {
     });
   };
 
-  const padZero = (num) => {
+  const padZero = (num: Number) => {
     return num.toString().padStart(2, "0");
   }
 
@@ -88,7 +88,7 @@ const CardLocalWeather = () => {
           id="outlined-required"
           label="City"
           onChange={handleOnchage}
-          onKeyDown={handleOnchage}
+          // onKeyDown={handleOnchage}
           placeholder="Search for city Or airport"
         />
       </Grid>
